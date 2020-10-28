@@ -7,4 +7,7 @@ class Community{
         return arr.map(x => new Community(x))
     }
 
+    // linkToCommunity(this){
+    //     return this.id
+    // }
 }

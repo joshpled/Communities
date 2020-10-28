@@ -1,12 +1,8 @@
 document.addEventListener("DOMContentLoaded", ()=>{
-
     getUsers()
     getAllCommunities()
     document.querySelector("#modalInsert").innerHTML = modalDemo
 })
-
-
-
 
 function displayOnDom(arr, idName){
     let listName = document.querySelector(idName)
@@ -17,3 +13,4 @@ function displayOnDom(arr, idName){
         listName.appendChild(li)
     }
 }
+
