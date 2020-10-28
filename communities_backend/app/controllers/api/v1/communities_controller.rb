@@ -3,4 +3,9 @@ class Api::V1::CommunitiesController < ApplicationController
         communities = Community.all
         render json: CommunitySerializer.new(communities).serializable_hash
     end
+
+    def show
+        community = Community.find_by_id(params[:id])
+        render json: CommunitySerializer.new(community).serializable_hash
+    end
 end
