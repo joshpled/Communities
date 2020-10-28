@@ -43,7 +43,9 @@ end
 #Additional Gems
 gem 'awesome_print'
 gem 'fast_jsonapi'
+gem 'dotenv-rails', groups: [:development, :test]
 
 #Authorization and Authentication
 gem 'devise'
-gem ''
+gem 'devise-jwt'
+gem 'omniauth-google-oauth2'
