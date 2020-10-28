@@ -48,4 +48,3 @@ gem 'dotenv-rails', groups: [:development, :test]
 #Authorization and Authentication
 gem 'devise'
 gem 'devise-jwt'
-gem 'omniauth-google-oauth2'

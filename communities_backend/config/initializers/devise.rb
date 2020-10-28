@@ -21,12 +21,14 @@ Devise.setup do |config|
     # TODO: Assign this to environment variable before production deployment!
     jwt.secret = '1122a4f200848bdaf862f401db08d7af9d67d3a8bc2d5f3d42145f8d8e376736527e8cc0d5c1b9b5d14f84008d48048882b8fdc49c772371fe014b2cd2849d4c'
     jwt.dispatch_requests = [
-        ['POST', %r{^/users/sign_in$}],
-        ['GET', %r{^/$}]
+      ['POST', %r{^/login$}]
     ]
-    jwt.request_formats = { user: [:json] }
-    jwt.expiration_time = 8.hours.to_i
+    jwt.revocation_requests = [
+      ['DELETE', %r{^/logout$}]
+    ]
+    jwt.expiration_time = 1.day.to_i
   end
+
 
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
@@ -275,7 +277,7 @@ Devise.setup do |config|
   # should add them to the navigational formats lists.
   #
   # The "*/*" below is required to match Internet Explorer requests.
-  # config.navigational_formats = ['*/*', :html]
+  config.navigational_formats = []
 
   # The default HTTP method used to sign out a resource. Default is :delete.
   config.sign_out_via = :delete

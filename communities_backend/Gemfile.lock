@@ -137,6 +137,9 @@ GEM
       jwt (>= 2.0)
       omniauth (>= 1.1.1)
       omniauth-oauth2 (>= 1.6)
+    omniauth-jwt (0.0.2)
+      jwt
+      omniauth (~> 1.1)
     omniauth-oauth2 (1.7.0)
       oauth2 (~> 1.4)
       omniauth (~> 1.9)
@@ -224,6 +227,7 @@ DEPENDENCIES
   fast_jsonapi
   listen (~> 3.2)
   omniauth-google-oauth2
+  omniauth-jwt
   pg (>= 0.18, < 2.0)
   puma (~> 4.1)
   rack-cors
