@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
     getUsers()
     getAllCommunities()
     document.querySelector("#modalInsert").innerHTML = modalDemo
+    document.querySelector("#createUsername").onclick = makeNickname()
 })
 
 function displayOnDom(arr, idName){
