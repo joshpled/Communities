@@ -14,7 +14,6 @@ let modalDemo = `
         </div>
         <div class="modal-body">
           Make a Username:
-          
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
