@@ -7,7 +7,10 @@ class Community{
         return arr.map(x => new Community(x))
     }
 
-    // linkToCommunity(this){
-    //     return this.id
-    // }
+    createLiElement(){
+        let li = document.createElement('li')
+        li.className = "list-group-item"
+        li.innerHTML = this.name.toUpperCase()
+        return li
+    }
 }

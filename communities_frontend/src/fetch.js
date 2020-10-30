@@ -7,7 +7,7 @@ async function getUsers(){
 async function getAllCommunities(){
     const resp = await fetch("http://localhost:3000/api/v1/communities")
     const data = await resp.json();
-    displayOnDom(Community.createCommunities(data), '#communitiesList')
+    displayOnDom(Community.createCommunities(data), '#communitiesList') 
 }
 
 // function makeNickname(){
