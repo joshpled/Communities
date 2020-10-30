@@ -6,6 +6,7 @@ class Api::V1::CommunitiesController < ApplicationController
 
     def show
         community = Community.find_by_id(params[:id])
-        render json: CommunitySerializer.new(community).serializable_hash
+
+        render json: CommunitySerializer.new(community,{include: [:posts]}).serializable_hash
     end
 end

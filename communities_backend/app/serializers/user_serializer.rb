@@ -1,7 +1,10 @@
 class UserSerializer
   include FastJsonapi::ObjectSerializer
   attributes :nickname
-
+  has_many :user_communities
+  has_many :posts
+  has_many :communities, through: :user_communities
+  
   def serializable_hash
     data = super
 

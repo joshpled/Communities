@@ -10,6 +10,14 @@ async function getAllCommunities(){
     displayOnDom(Community.createCommunities(data), '#communitiesList') 
 }
 
+async function getAllCommunityPosts(comm){
+    const resp = await fetch(`http://localhost:3000/api/v1/communities/${comm}`)
+    const data = await resp.json();
+    console.log(data)
+}
+
+
+// FUNCTON FOR POST CREATE
 // function makeNickname(){
 // fetch("http://localhost:3000/api/v1/users", {
 //   method: "POST",
