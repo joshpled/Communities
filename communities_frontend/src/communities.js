@@ -20,10 +20,16 @@ class Community{
         return li
     }
 
+   
+
 }
 
 function goToCommunity(id){
     fetch(`http://localhost:3000/api/v1/communities/${id}`)
     .then((resp) => resp.json())
-    .then((data) => console.log(data))
+    .then((data) => communityPosts(data))
+}
+
+function communityPosts(data){
+    debugger
 }

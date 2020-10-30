@@ -1,3 +1,4 @@
+require 'pry'
 class CommunitySerializer
   include FastJsonapi::ObjectSerializer
   attributes :name, :id
@@ -8,7 +9,8 @@ class CommunitySerializer
     data = super
 
     if data[:data].is_a? Hash
-      data[:data][:attributes]
+      binding.pry
+      [data[:data][:attributes],data[:included]]
 
     elsif data[:data].is_a? Array
       data[:data].map{ |x| x[:attributes] }
