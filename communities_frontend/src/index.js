@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", ()=>{
-    getUsers()
     getAllCommunities()
     // getAllCommunityPosts(1)
     // document.querySelector("#modalInsert").innerHTML = modalDemo
