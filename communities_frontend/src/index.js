@@ -1,5 +1,9 @@
 document.addEventListener("DOMContentLoaded", ()=>{
-    document.querySelector('#')
+    document.querySelector('#homeButton').onclick = function(){
+        document.querySelector('#postsList').setAttribute('style','display:none')
+        document.querySelector('#postsList').innerHTML = ''
+        document.querySelector('#communitiesList').removeAttribute('style')
+    }
     getAllCommunities()
     // document.querySelector("#modalInsert").innerHTML = modalDemo
     // document.querySelector("#createUsername").onclick = makeNickname()
