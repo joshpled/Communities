@@ -21,16 +21,9 @@ class Community {
   }
 }
 
-function goToCommunity(id) {
-  fetch(`http://localhost:3000/api/v1/communities/${id}`)
-    .then((resp) => resp.json())
-    .then((data) => communityPosts(data));
-}
-
 function communityPosts(data) {
   let posts = data.slice(1);
-  for (x of document.querySelectorAll('li[data-communitylist="indexList"]')){
-      x.setAttribute('style','display:none')
-  }
-  displayOnDom(posts, '#communitiesList')
+  document.querySelector('#communitiesList').setAttribute('style','display:none')
+  document.querySelector('#postsList').removeAttribute('style')
+  displayOnDom(Post.createPosts(posts), '#postsList')
 }

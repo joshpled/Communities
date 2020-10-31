@@ -10,11 +10,11 @@ async function getAllCommunities(){
     displayOnDom(Community.createCommunities(data), '#communitiesList') 
 }
 
-// async function getAllCommunityPosts(comm){
-//     const resp = await fetch(`http://localhost:3000/api/v1/communities/${comm}`)
-//     const data = await resp.json();
-//     console.log(data)
-// }
+function goToCommunity(id) {
+    fetch(`http://localhost:3000/api/v1/communities/${id}`)
+      .then((resp) => resp.json())
+      .then((data) => communityPosts(data));
+  }
 
 
 // FUNCTON FOR POST CREATE
