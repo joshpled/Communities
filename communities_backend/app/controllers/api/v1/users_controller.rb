@@ -10,8 +10,6 @@ class Api::V1::UsersController < ApplicationController
         if user.save
           session[:user_id] = user.id 
           binding.pry
-          
-          render json: { "token":"succesful" }
         else 
           render json: { "token":"unsuccesful" }
         end
