@@ -13,11 +13,17 @@ function loginUser(e){
   })
 })};
 
+// LOGIN AND SIGNUP FORMS
+
 function openLoginForm(){
   document.querySelector('#signUpModal').setAttribute('style','display: hidden')
   document.body.classList.add("showLoginForm");
 }
 function closeLoginForm(){
+  let inputValues = document.querySelector('#loginModal').querySelectorAll('[data-input="login"]')
+  for (let x of inputValues){
+    x.value = ''
+  }
   document.querySelector('#signUpModal').removeAttribute('style')
   document.body.classList.remove("showLoginForm");
 }
@@ -26,6 +32,10 @@ function openSignUpForm(){
   document.body.classList.add("showSignUpForm");
 }
 function closeSignUpForm(){
+  let inputValues = document.querySelector('#signUpModal').querySelectorAll('[data-input="signup"]')
+  for (let x of inputValues){
+    x.value = ''
+  }
   document.querySelector('#loginModal').removeAttribute('style')
   document.body.classList.remove("showSignUpForm");
 }

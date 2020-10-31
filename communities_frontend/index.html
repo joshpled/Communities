@@ -7,7 +7,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <link rel="stylesheet" href="src/index.css">
+    <link rel="stylesheet" href="src/css/index.css">
     <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
     <!-- Start Website -->
 
@@ -55,11 +55,11 @@
       </div>
       <div class="element">
         <label for="username">Username</label>
-        <input type="text" id="username">
+        <input type="text" id="username" data-input="login">
       </div>
       <div class="element">
         <label for="password">Password</label>
-        <input type="password" id="password">
+        <input type="password" id="password" data-input="login">
       </div>
       <div class="element">
         <button onclick="loginUser()">Login</button>
@@ -83,19 +83,19 @@
     </div>
     <div class="element2">
       <label for="username">Username</label>
-      <input type="text" id="username">
+      <input type="text" id="username" data-input="signup">
     </div>
     <div class="element2">
       <label for="email">email</label>
-      <input type="text" id="email">
+      <input type="text" id="email" data-input="signup">
     </div>
     <div class="element2">
       <label for="password">Password</label>
-      <input type="password" id="password">
+      <input type="password" id="password" data-input="signup">
     </div>
     <div class="element2">
       <label for="password_confirmation">Confirm Password</label>
-      <input type="password" id="password_confirmation">
+      <input type="password" id="password_confirmation" data-input="signup">
     </div>
     <div class="element2">
       <button onclick="signUpUser()">Signup</button>
@@ -105,6 +105,7 @@
 </div>
 <!-- end Signup modal -->
 
+<!-- Containers for Lists  -->
     <div class="container" id="mainDiv">
       <ul class="list-unstyled" id="postsList" style="display: none;"></ul>
       <ul class="list-group" id="communitiesList" ></ul>
@@ -116,11 +117,12 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
     <!-- Communities JS -->
-    <script src="./src/index.js"></script>
-    <script src="./src/communities.js"></script>
-    <script src="./src/login.js"></script>
-    <script src="./src/fetch.js"></script>
-    <script src="./src/posts.js"></script>
+    <script src="./js/src/index.js"></script>
+    <script src="./js/src/communities.js"></script>
+    <script src="./js/src/login.js"></script>
+    <script src="./js/src/fetch.js"></script>
+    <script src="./js/src/posts.js"></script>
+    <script src="./js/src/signup.js"></script>
     
   </body>
 </html>
