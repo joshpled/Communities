@@ -16,3 +16,11 @@ function displayOnDom(arr, idName){
         listName.appendChild(li)
     }
 }
+
+function navBar(button){
+    document.querySelector('#homeButton').onclick = function(){
+        document.querySelector('#postsList').setAttribute('style','display:none')
+        document.querySelector('#postsList').innerHTML = ''
+        document.querySelector('#communitiesList').removeAttribute('style')
+    }
+}

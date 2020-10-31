@@ -1,8 +1,10 @@
 body{
     background-color: #1287A5;
+    font-family: 'Nunito', sans-serif;
 }
 
 #mainDiv {
     background-color: #2B2B52;
     height: 100vh;
 }
+
