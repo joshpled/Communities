@@ -1,0 +1,29 @@
+function openSignUpForm() {
+  document
+    .querySelector("#loginModal")
+    .setAttribute("style", "display: hidden");
+  document.body.classList.add("showSignUpForm");
+}
+function closeSignUpForm() {
+  let inputValues = document
+    .querySelector("#signUpModal")
+    .querySelectorAll('[data-input="signup"]');
+  for (let x of inputValues) {
+    x.value = "";
+  }
+  document.querySelector("#loginModal").removeAttribute("style");
+  document.body.classList.remove("showSignUpForm");
+}
+
+// FUNCTON FOR POST CREATE
+// function makeNickname(){
+// fetch("http://localhost:3000/api/v1/users", {
+//   method: "POST",
+//   headers: {
+//     "Content-Type": "application/json",
+//     "Accept": "application/json"
+//   },
+//   body: JSON.stringify({
+//     nickname: "Byron",
+//   })
+// })};
