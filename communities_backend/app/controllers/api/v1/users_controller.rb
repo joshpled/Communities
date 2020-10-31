@@ -8,8 +8,12 @@ class Api::V1::UsersController < ApplicationController
       
         user = User.new(user_params)
         if user.save
-
+          session[:user_id] = user.id 
+          binding.pry
           
+          render json: { "token":"succesful" }
+        else 
+          render json: { "token":"unsuccesful" }
         end
       
     end

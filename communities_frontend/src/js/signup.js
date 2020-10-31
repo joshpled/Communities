@@ -31,7 +31,9 @@ function signUpUser() {
 
   fetch("http://localhost:3000/api/v1/users", {
     method: "POST",
+    credentials: 'include',
     headers: {
+      'X-CSRF-Token': getCSRFToken(),
       "Content-Type": "application/json",
       Accept: "application/json",
     },
