@@ -1,25 +1,27 @@
-let modalDemo = `
-<div class="container d-flex justify-content-center">
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-    Create Username
-  </button></div>
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          Make a Username:
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  `
+function loginUser(e){
+  let password = event.target.parentElement.parentElement.querySelector('#password').value
+  let username = event.target.parentElement.parentElement.querySelector('#username').value
+  fetch("http://localhost:3000/session", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+    "Accept": "application/json"
+  },
+  body: JSON.stringify({
+    username: username,
+    password: password,
+  })
+})};
+
+// FUNCTON FOR POST CREATE
+// function makeNickname(){
+// fetch("http://localhost:3000/api/v1/users", {
+//   method: "POST",
+//   headers: {
+//     "Content-Type": "application/json",
+//     "Accept": "application/json"
+//   },
+//   body: JSON.stringify({
+//     nickname: "Byron",
+//   })
+// })};

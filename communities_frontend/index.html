@@ -28,15 +28,41 @@
           <li class="nav-item active" data-menu="Home">
             <a class="nav-link" id="homeButton" style="cursor: pointer">Home</a>
           </li>
+          <li class="nav-item active" data-menu="Home">
+            <a class="nav-link" id="login" style="cursor: pointer" onclick="openLoginForm()">Login</a>
+            <a class="nav-link" id="logout" style="cursor: pointer; display: none;">Log</a>
+            </li>
         </ul>
       </div>
     </nav>
   </div>
   <!-- end NAVBAR -->
 
-  <div id="modalInsert">
+  <!-- login modal --> 
+  <div class="popup-overlay"></div>
+  <div class="popup">
+    <div class="popup-close" onclick="closeLoginForm()">&times;</div>
+    <div class="form">
+      <div class="avatar">
+        Communities
+      </div>
+      <div class="header">
+        Member login
+      </div>
+      <div class="element">
+        <label for="username">Username</label>
+        <input type="text" id="username">
+      </div>
+      <div class="element">
+        <label for="password">Password</label>
+        <input type="password" id="password">
+      </div>
+      <div class="element">
+        <button onclick="loginUser()">Login</button>
+      </div>
+    </div>
   </div>
-
+<!-- end modal -->
 
     <div class="container" id="mainDiv">
       <ul class="list-unstyled" id="postsList" style="display: none;"></ul>
