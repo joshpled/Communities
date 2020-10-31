@@ -15,6 +15,11 @@ class Community {
     li.setAttribute('style','cursor: pointer')
     li.innerHTML = this.name.toUpperCase();
     li.setAttribute("data-communitylist", "indexList");
+    // let badge = document.createElement('span')
+    // badge.className = "badge badge-primary badge-pill"
+    // badge.innerHTML = "2"
+    // badge.setAttribute('style','float:right')
+    // li.appendChild(badge)
     li.onclick = function () {
       goToCommunity(id);
     };
