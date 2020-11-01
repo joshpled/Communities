@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // fetch('http://localhost:3000', {credentials: 'include'})
+  fetch('http://localhost:3000', {credentials: 'include'})
 
   document.querySelector("#homeButton").onclick = function () {
     document.querySelector("#postsList").setAttribute("style", "display:none");

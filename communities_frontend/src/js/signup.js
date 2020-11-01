@@ -29,16 +29,24 @@ function signUpUser() {
     },
   };
 
-  fetch("http://localhost:3000/api/v1/users", {
+  const configObject = {
     method: "POST",
-    credentials: 'include',
+    credentials: "include",
     headers: {
-      'X-CSRF-Token': getCSRFToken(),
+      "X-CSRF-Token": getCSRFToken(),
       "Content-Type": "application/json",
-      Accept: "application/json",
     },
     body: JSON.stringify(data),
-  }).then((resp) => console.log(resp))
-    .then((data) => console.log(data))
-    .catch((error) => console.log(error));
+  };
+
+  fetch("http://localhost:3000/api/v1/users", configObject)
+    .then((resp) => resp.json())
+    .then(function (json) {
+      if (json.errors) {
+        console.log(json.errors)
+        }
+       else {
+        console.log(json)
+      }
+    });
 }
