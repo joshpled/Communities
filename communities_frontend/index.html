@@ -28,82 +28,11 @@
           <li class="nav-item active" data-menu="Home">
             <a class="nav-link" id="homeButton" style="cursor: pointer">Home</a>
           </li>
-          <li class="nav-item active" data-menu="Home">
-            <a class="nav-link" id="login" style="cursor: pointer" onclick="openLoginForm()">Login</a>
-            <a class="nav-link" id="logout" style="cursor: pointer; display: none;">Logout</a>
-            </li>
-            <li class="nav-item active" data-menu="Home">
-              <a class="nav-link" id="signup" style="cursor: pointer" onclick="openSignUpForm()">SignUp</a>
-              </li>
         </ul>
       </div>
     </nav>
   </div>
   <!-- end NAVBAR -->
-
-  <!-- login modal --> 
-  <div id="loginModal">
-  <div class="popup-overlay"></div>
-  <div class="popup">
-    <div class="popup-close" onclick="closeLoginForm()">&times;</div>
-    <div class="form">
-      <div class="avatar">
-        Communities
-      </div>
-      <div class="header">
-        Member login
-      </div>
-      <div class="element">
-        <label for="username">Username</label>
-        <input type="text" id="username" data-input="login">
-      </div>
-      <div class="element">
-        <label for="password">Password</label>
-        <input type="password" id="password" data-input="login">
-      </div>
-      <div class="element">
-        <button onclick="loginUser()" id="loginButton">Login</button>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- end login modal -->
-
-<!-- Signup modal --> 
-<div id="signUpModal">
-<div class="popup-overlay2"></div>
-<div class="popup2">
-  <div class="popup-close2" onclick="closeSignUpForm()">&times;</div>
-  <div class="form2">
-    <div class="avatar2">
-      Communities
-    </div>
-    <div class="header2">
-      Member Signup
-    </div>
-    <div class="element2">
-      <label for="username">Username</label>
-      <input type="text" id="username" data-input="signup">
-    </div>
-    <div class="element2">
-      <label for="email">Email</label>
-      <input type="text" id="email" data-input="signup">
-    </div>
-    <div class="element2">
-      <label for="password">Password</label>
-      <input type="password" id="password" data-input="signup">
-    </div>
-    <div class="element2">
-      <label for="password_confirmation">Confirm Password</label>
-      <input type="password" id="password_confirmation" data-input="signup">
-    </div>
-    <div class="element2">
-      <button onclick="signUpUser()" id="signUpButton">Signup</button>
-    </div>
-  </div>
-</div>
-</div>
-<!-- end Signup modal -->
 
 <!-- Containers for Lists  -->
     <div class="container" id="mainDiv">
