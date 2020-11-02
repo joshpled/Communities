@@ -5,6 +5,7 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def show
+    user = User.find_by_id(params[:id])
     render json: user
   end
 
@@ -12,10 +13,9 @@ class Api::V1::UsersController < ApplicationController
     user = User.new(user_params)
 
     if user.save
-      session[:user_id] = user.id
-      render json: user, only: [:name], status: :created, location: user
+      render json: UserSerializer.new(user)
     else
-      render json: { errors: user.errors.full_messages }, status: :unprocessable_entity
+      render json: { errors: user.errors.full_messages }
     end
   end
 
