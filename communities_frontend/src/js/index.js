@@ -5,6 +5,7 @@ const communitiesList = document.querySelector("#communitiesList");
 
 document.addEventListener("DOMContentLoaded", () => {
   getAllCommunities();
+  getUsers()
 });
 
 function displayOnDom(arr, idName) {

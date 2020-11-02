@@ -1,31 +1,27 @@
 class Api::V1::UsersController < ApplicationController
-  before_action :set_user, only: [:show]
-
-  # GET /users/1
-  def show
-    render json: @user
+  def index
+    users = User.all
+    render json: UserSerializer.new(users).serializable_hash
   end
 
-  # POST /users
-  def create
-    @user = User.new(user_params)
+  def show
+    render json: user
+  end
 
-    if @user.save
-      session[:user_id] = @user.id
-      render json: @user, only: [:name], status: :created, location: @user
+  def create
+    user = User.new(user_params)
+
+    if user.save
+      session[:user_id] = user.id
+      render json: user, only: [:name], status: :created, location: user
     else
-      render json: { errors: @user.errors.full_messages }, status: :unprocessable_entity
+      render json: { errors: user.errors.full_messages }, status: :unprocessable_entity
     end
   end
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
-  def set_user
-    @user = User.find(params[:id])
-  end
-
   def user_params
-    params.require(:user).permit(:username, :email, :password, :password_confirmation)
+    params.require(:user).permit(:username)
   end
 end

@@ -5,7 +5,7 @@ Community.destroy_all
 Post.destroy_all
 
 10.times {
-  User.create(username: Faker::Internet.username, email: Faker::Internet.free_email, password: Faker::Internet.password(min_length: 8, max_length: 20, mix_case: true, special_characters: true))
+  User.create(username: Faker::Internet.unique.username)
 }
 
 10.times {
