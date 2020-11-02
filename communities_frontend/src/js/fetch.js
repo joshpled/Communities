@@ -1,8 +1,7 @@
 async function getUsers(){
     const resp = await fetch('http://localhost:3000/api/v1/users');
     const data = await resp.json();
-    debugger
-    console.log(data);
+    let users = User.createUsers(data)
 }
 
 async function getAllCommunities(){
