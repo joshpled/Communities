@@ -4,6 +4,11 @@ class Api::V1::CommunitiesController < ApplicationController
         render json: CommunitySerializer.new(communities).serializable_hash
     end
 
+
+    def create 
+        byebug
+    end
+
     def show
         community = Community.find_by_id(params[:id])
 

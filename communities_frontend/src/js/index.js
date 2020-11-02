@@ -1,14 +1,10 @@
-document.addEventListener("DOMContentLoaded", () => {
-  // fetch('http://localhost:3000', {credentials: 'include'})
+const BASE_URL = "localhost:3000";
+const homeButton = document.querySelector("#homeButton")
+const postList = document.querySelector("#postsList");
+const communitiesList = document.querySelector("#communitiesList");
 
-  document.querySelector("#homeButton").onclick = function () {
-    document.querySelector("#postsList").setAttribute("style", "display:none");
-    document.querySelector("#postsList").innerHTML = "";
-    document.querySelector("#communitiesList").removeAttribute("style");
-  };
+document.addEventListener("DOMContentLoaded", () => {
   getAllCommunities();
-  // document.querySelector("#modalInsert").innerHTML = modalDemo
-  // document.querySelector("#createUsername").onclick = makeNickname()
 });
 
 function displayOnDom(arr, idName) {
@@ -19,14 +15,9 @@ function displayOnDom(arr, idName) {
   }
 }
 
-function navBar(button) {
-  document.querySelector("#homeButton").onclick = function () {
-    document.querySelector("#postsList").setAttribute("style", "display:none");
-    document.querySelector("#postsList").innerHTML = "";
-    document.querySelector("#communitiesList").removeAttribute("style");
-  };
-}
-
-function getCSRFToken() {
-  return unescape(document.cookie.split('=')[1])
-}
+homeButton.addEventListener('click',  ()=> {
+  postList.setAttribute("style", "display:none;");
+    postList.innerHTML = "";
+    communitiesList.removeAttribute("style");
+    communitiesList.setAttribute('style','padding-top: 10px;');
+})

@@ -1,6 +1,6 @@
 async function getUsers(){
-    const response = await fetch('http://localhost:3000/api/v1/users');
-    const data = await response.json();
+    const resp = await fetch('http://localhost:3000/api/v1/users');
+    const data = await resp.json();
     console.log(data);
 }
 
@@ -18,14 +18,17 @@ function goToCommunity(id) {
 
 
 // FUNCTON FOR POST CREATE
-// function makeNickname(){
-// fetch("http://localhost:3000/api/v1/users", {
-//   method: "POST",
-//   headers: {
-//     "Content-Type": "application/json",
-//     "Accept": "application/json"
-//   },
-//   body: JSON.stringify({
-//     nickname: "Byron",
-//   })
-// })};
+// let testerInput = document.querySelector('#submit')
+// testerInput.addEventListener('click', function makeCommunity(){
+//     event.preventDefault()
+//     let input = event.target.parentElement.children.name.value
+//     fetch("http://localhost:3000/api/v1/communities", {
+//       method: "POST",
+//       headers: {
+//         "Content-Type": "application/json",
+//         "Accept": "application/json"
+//       },
+//       body: JSON.stringify({
+//         nickname: input,
+//       })
+//     })})

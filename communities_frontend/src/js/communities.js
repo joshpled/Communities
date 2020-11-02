@@ -15,21 +15,18 @@ class Community {
     li.setAttribute('style','cursor: pointer')
     li.innerHTML = this.name.toUpperCase();
     li.setAttribute("data-communitylist", "indexList");
-    // let badge = document.createElement('span')
-    // badge.className = "badge badge-primary badge-pill"
-    // badge.innerHTML = "2"
-    // badge.setAttribute('style','float:right')
-    // li.appendChild(badge)
     li.onclick = function () {
       goToCommunity(id);
     };
     return li;
   }
+ 
 }
 
 function communityPosts(data) {
   let posts = data.slice(1);
-  document.querySelector('#communitiesList').setAttribute('style','display:none')
-  document.querySelector('#postsList').removeAttribute('style')
+  communitiesList.setAttribute('style','display:none')
+  postList.removeAttribute('style')
+  postList.setAttribute('style','padding-top: 10px;')
   displayOnDom(Post.createPosts(posts), '#postsList')
 }
