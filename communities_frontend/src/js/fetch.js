@@ -38,6 +38,7 @@ function makeCommunity() {
     .then((resp) => resp.json())
     .then((json) => {
       communitiesDOMList.push(new Community(json))
+      communitiesList.innerHTML = ""
       displayOnDom(communitiesDOMList, "#communitiesList")
       closeCommunityForm()
     })
