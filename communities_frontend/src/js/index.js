@@ -9,8 +9,11 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelector("#modal").innerHTML = sample;
 });
 
-function displayOnDom(arr, idName) {
+function displayOnDom(arr, idName, title) {
   let listName = document.querySelector(idName);
+  let header = document.createElement('h1')
+  header.innerText = title
+  listName.appendChild(header)
   for (let x of arr) {
     let li = x.createLiElement();
     listName.appendChild(li);

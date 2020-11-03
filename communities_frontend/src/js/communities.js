@@ -1,3 +1,5 @@
+let communitiesDOMList = [];
+
 class Community {
   constructor(obj) {
     this.name = obj.name;
@@ -20,6 +22,18 @@ class Community {
     };
     return li;
   }
+
+  static sortByFirstLetter(){
+    debugger
+  }
+  
+  static sortByNewest(){
+  
+  }
+  
+  static sortByOldest(){
+      
+  }
  
 }
 
@@ -28,5 +42,31 @@ function communityPosts(data) {
   communitiesList.setAttribute('style','display:none')
   postList.removeAttribute('style')
   postList.setAttribute('style','padding-top: 10px;')
-  displayOnDom(Post.createPosts(posts), '#postsList')
+  displayOnDom(Post.createPosts(posts), '#postsList', "Posts")
+}
+
+// FUNCTON FOR POST CREATE COMMUNITIES
+
+function makeCommunity() {
+  event.preventDefault();
+  let input = event.target.parentElement.parentElement.querySelector("#name")
+    .value;
+  fetch("http://localhost:3000/api/v1/communities", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
+    body: JSON.stringify({
+      name: input,
+    }),
+  })
+    .then((resp) => resp.json())
+    .then((json) => {
+      communitiesDOMList.push(new Community(json))
+      communitiesList.innerHTML = ""
+      displayOnDom(communitiesDOMList, "#communitiesList", "Communities")
+      closeCommunityForm()
+    })
+    .catch((error) => console.log(error));
 }
