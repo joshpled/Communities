@@ -11,13 +11,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function displayOnDom(arr, idName, title) {
   let listName = document.querySelector(idName);
-  let headerDiv = document.createElement('div')
   let header = document.createElement('h1')
   header.className = "display-4 text-white float-left"
   header.innerText = title
-  headerDiv.appendChild(header)
-  listName.appendChild(headerDiv)
-  headerDiv.appendChild(dropDownMenu())
+  listName.appendChild(header)
+  listName.appendChild(dropDownMenu())
   for (let x of arr) {
     let li = x.createLiElement();
     listName.appendChild(li);
