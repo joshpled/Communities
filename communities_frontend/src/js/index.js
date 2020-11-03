@@ -61,12 +61,15 @@ function dropDownMenu(){
   sortByFirstLetter.innerText = "Sort Alphabetically"
   sortByNewest.innerText = "Sort by Newest"
   sortByOldest.innerText = "Sort by Oldest"
+  sortByFirstLetter.setAttribute('onclick','Community.sortByFirstLetter()')
+  sortByNewest.setAttribute('onclick','Community.sortByFirstLetter()')
+  sortByOldest.setAttribute('onclick','Community.sortByFirstLetter()')
   sortByFirstLetter.className = "dropdown-item"
   sortByNewest.className = "dropdown-item"
   sortByOldest.className = "dropdown-item"
-  sortByFirstLetter.onclick = "Community.sortByFirstLetter()"
-  sortByNewest.onclick = "Community.sortByFirstLetter()"
-  sortByOldest.onclick = "Community.sortByFirstLetter()"
+  sortByFirstLetter.style = "cursor: pointer;"
+  sortByNewest.style = "cursor: pointer"
+  sortByOldest.style = "cursor: pointer"
   menuDiv.appendChild(sortByFirstLetter)
   menuDiv.appendChild(sortByNewest)
   menuDiv.appendChild(sortByOldest)
