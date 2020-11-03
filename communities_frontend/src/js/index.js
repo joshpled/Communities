@@ -1,13 +1,12 @@
 const BASE_URL = "localhost:3000";
-const homeButton = document.querySelector("#homeButton")
+const homeButton = document.querySelector("#homeButton");
 const postList = document.querySelector("#postsList");
 const communitiesList = document.querySelector("#communitiesList");
 
 document.addEventListener("DOMContentLoaded", () => {
   getAllCommunities();
-  getUsers()
-  document.querySelector('#modal').innerHTML = sample
-  
+  getUsers();
+  document.querySelector("#modal").innerHTML = sample;
 });
 
 function displayOnDom(arr, idName) {
@@ -18,16 +17,16 @@ function displayOnDom(arr, idName) {
   }
 }
 
-homeButton.addEventListener('click',  ()=> {
+homeButton.addEventListener("click", () => {
   postList.setAttribute("style", "display:none;");
-    postList.innerHTML = "";
-    communitiesList.removeAttribute("style");
-    communitiesList.setAttribute('style','padding-top: 10px;');
-})
+  postList.innerHTML = "";
+  communitiesList.removeAttribute("style");
+  communitiesList.setAttribute("style", "padding-top: 10px;");
+});
 
-function openCommunityForm(){
+function openCommunityForm() {
   document.body.classList.add("showCommunityForm");
 }
-function closeCommunityForm(){
+function closeCommunityForm() {
   document.body.classList.remove("showCommunityForm");
 }
