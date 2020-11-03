@@ -6,6 +6,8 @@ const communitiesList = document.querySelector("#communitiesList");
 document.addEventListener("DOMContentLoaded", () => {
   getAllCommunities();
   getUsers()
+  document.querySelector('#modal').innerHTML = sample
+  
 });
 
 function displayOnDom(arr, idName) {
@@ -22,3 +24,10 @@ homeButton.addEventListener('click',  ()=> {
     communitiesList.removeAttribute("style");
     communitiesList.setAttribute('style','padding-top: 10px;');
 })
+
+function openCommunityForm(){
+  document.body.classList.add("showCommunityForm");
+}
+function closeCommunityForm(){
+  document.body.classList.remove("showCommunityForm");
+}

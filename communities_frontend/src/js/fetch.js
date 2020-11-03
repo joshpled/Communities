@@ -18,17 +18,17 @@ function goToCommunity(id) {
 
 
 // FUNCTON FOR POST CREATE
-// let testerInput = document.querySelector('#submit')
-// testerInput.addEventListener('click', function makeCommunity(){
-//     event.preventDefault()
-//     let input = event.target.parentElement.children.name.value
-//     fetch("http://localhost:3000/api/v1/communities", {
-//       method: "POST",
-//       headers: {
-//         "Content-Type": "application/json",
-//         "Accept": "application/json"
-//       },
-//       body: JSON.stringify({
-//         nickname: input,
-//       })
-//     })})
+
+function makeCommunity(){
+    event.preventDefault()
+    let input = event.target.parentElement.parentElement.querySelector('#name').value
+    fetch("http://localhost:3000/api/v1/communities", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      body: JSON.stringify({
+        name: input,
+      })
+    }).then((resp) => resp.json()).then((json) => console.log(json))}

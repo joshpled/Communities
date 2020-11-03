@@ -6,7 +6,12 @@ class Api::V1::CommunitiesController < ApplicationController
 
 
     def create 
-        byebug
+        community = Community.new(name: params[:name])
+        if user.save
+            render json: CommunitySerializer.new(community)
+          else
+            render json: { errors: community.errors.full_messages }
+          end
     end
 
     def show
