@@ -24,7 +24,9 @@ class Community {
   }
 
   static sortByFirstLetter(){
-    debugger
+    communitiesDOMList.sort((a, b) => (a.name > b.name) ? 1 : -1)
+    communitiesList.innerHTML = ""
+    displayOnDom(communitiesDOMList,"#communitiesList", "Communities")
   }
   
   static sortByNewest(){
