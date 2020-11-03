@@ -42,7 +42,7 @@ function communityPosts(data) {
   communitiesList.setAttribute('style','display:none')
   postList.removeAttribute('style')
   postList.setAttribute('style','padding-top: 10px;')
-  displayOnDom(Post.createPosts(posts), '#postsList', "Posts")
+  displayOnDom(Post.createPosts(posts), '#postsList', `Posts for ${data[0].name}`)
 }
 
 // FUNCTON FOR POST CREATE COMMUNITIES

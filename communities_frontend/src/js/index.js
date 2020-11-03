@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
 function displayOnDom(arr, idName, title) {
   let listName = document.querySelector(idName);
   let header = document.createElement('h1')
+  header.className = "display-4 text-white"
   header.innerText = title
   listName.appendChild(header)
   for (let x of arr) {
