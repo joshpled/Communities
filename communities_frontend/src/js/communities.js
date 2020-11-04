@@ -13,6 +13,9 @@ class Community {
   createLiElement() {
     let id = this.id;
     let li = document.createElement("li");
+    let small = document.createElement('small')
+    small.setAttribute('style','float: right;')
+    small.innerText = "10 days ago"
     li.className = "list-group-item list-group-item-action";
     li.setAttribute('style','cursor: pointer')
     li.innerHTML = this.name.toUpperCase();
@@ -20,6 +23,7 @@ class Community {
     li.onclick = function () {
       goToCommunity(id);
     };
+    li.appendChild(small)
     return li;
   }
 

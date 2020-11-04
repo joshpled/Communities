@@ -10,12 +10,16 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function displayOnDom(arr, idName, title) {
+  let div = document.createElement('div')
   let listName = document.querySelector(idName);
   let header = document.createElement('h1')
-  header.className = "display-4 text-white float-left"
+  header.className = "display-4 text-white"
   header.innerText = title
-  listName.appendChild(header)
-  listName.appendChild(dropDownMenu())
+  header.setAttribute('style','float:left;')
+  div.className = "container"
+  div.appendChild(header)
+  div.appendChild(dropDownMenu())
+  listName.appendChild(div)
   for (let x of arr) {
     let li = x.createLiElement();
     listName.appendChild(li);
@@ -37,22 +41,20 @@ function closeCommunityForm() {
 }
 
 function dropDownMenu(){
-  let mainDiv = document.createElement('div')
-  mainDiv.style = "float:right;"
-  mainDiv.className = "dropdown mr-1"
+  let span = document.createElement('span')
+  span.className = "align-items-end"
   let button = document.createElement('button')
   button.type = 'button'
   button.className = 'btn btn-secondary dropdown-toggle'
-  button.idName = "dropdownMenuOffset"
+  button.idName = "dropdownMenu1"
   button.setAttribute('data-toggle','dropdown')
   button.setAttribute('aria-haspopup','true')
   button.setAttribute('aria-expanded','false')
-  button.setAttribute('data-offset','10,20')
   button.innerText = "Sort"
-  mainDiv.appendChild(button)
-  let menuDiv = document.createElement('div')
-  menuDiv.className = "dropdown-menu"
-  menuDiv.setAttribute('aria-labelledby','dropdownMenuOffset')
+  button.style = "float: right;"
+  let menu = document.createElement('div')
+  menu.className = "dropdown-menu"
+  menu.setAttribute('aria-labelledby','dropdownMenu1')
   let sortByFirstLetter = document.createElement('a')
   let sortByNewest = document.createElement('a')
   let sortByOldest = document.createElement('a')
@@ -68,9 +70,8 @@ function dropDownMenu(){
   sortByFirstLetter.style = "cursor: pointer;"
   sortByNewest.style = "cursor: pointer"
   sortByOldest.style = "cursor: pointer"
-  menuDiv.appendChild(sortByFirstLetter)
-  menuDiv.appendChild(sortByNewest)
-  menuDiv.appendChild(sortByOldest)
-  mainDiv.appendChild(menuDiv)
-  return mainDiv
+  menu.appendChild(sortByFirstLetter)
+  span.appendChild(button)
+  span.appendChild(menu)
+  return span
 }
