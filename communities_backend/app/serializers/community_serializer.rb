@@ -3,6 +3,9 @@ require "pry"
 class CommunitySerializer
   include FastJsonapi::ObjectSerializer
   attributes :name, :id
+  attribute :created_at do |x|
+    x[:created_at].strftime('%D')
+  end
   has_many :user_communities
   has_many :posts, serializer: PostSerializer
 

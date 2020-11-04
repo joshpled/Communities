@@ -1,9 +1,10 @@
 let communitiesDOMList = [];
-
 class Community {
+  
   constructor(obj) {
     this.name = obj.name;
     this.id = obj.id;
+    this.created_at = obj.created_at
   }
 
   static createCommunities(arr) {
@@ -15,7 +16,7 @@ class Community {
     let li = document.createElement("li");
     let small = document.createElement('small')
     small.setAttribute('style','float: right;')
-    small.innerText = "10 days ago"
+    small.innerText = this.created_at
     li.className = "list-group-item list-group-item-action";
     li.setAttribute('style','cursor: pointer')
     li.innerHTML = this.name.toUpperCase();
