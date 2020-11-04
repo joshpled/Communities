@@ -12,10 +12,15 @@ class Post {
   }
 
   createLiElement() {
-    let li = document.createElement("li");
+    var li = document.createElement("li");
+    var p = document.createElement('p');
     li.className = "list-group-item list-group-item-action";
     li.setAttribute('style','cursor: pointer')
-    li.innerHTML = this.title
+    var title = document.createElement('h5')
+    p.innerText = this.content
+    title.innerText = this.title
+    li.appendChild(title)
+    li.appendChild(p)
     li.setAttribute("data-postslist", "postlist");
     return li;
   }
