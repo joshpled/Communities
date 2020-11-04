@@ -34,12 +34,16 @@ class Community {
     displayOnDom(communitiesDOMList,"#communitiesList", "Communities")
   }
   
-  static sortByNewest(){
-  
+  static sortByOldest(){
+    communitiesDOMList.sort((a, b) => (a.created_at > b.created_at) ? 1 : -1)
+    communitiesList.innerHTML = ""
+    displayOnDom(communitiesDOMList,"#communitiesList", "Communities")
   }
   
-  static sortByOldest(){
-      
+  static sortByNewest(){
+    communitiesDOMList.sort((a, b) => (a.created_at < b.created_at) ? 1 : -1)
+    communitiesList.innerHTML = ""
+    displayOnDom(communitiesDOMList,"#communitiesList", "Communities")
   }
  
 }
@@ -58,7 +62,7 @@ function makeCommunity() {
   event.preventDefault();
   let input = event.target.parentElement.parentElement.querySelector("#name")
     .value;
-  fetch("http://localhost:3000/api/v1/communities", {
+  fetch(`${BASE_URL}/api/v1/communities`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

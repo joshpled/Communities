@@ -62,8 +62,8 @@ function dropDownMenu(){
   sortByNewest.innerText = "Sort by Newest"
   sortByOldest.innerText = "Sort by Oldest"
   sortByFirstLetter.setAttribute('onclick','Community.sortByFirstLetter()')
-  sortByNewest.setAttribute('onclick','Community.sortByFirstLetter()')
-  sortByOldest.setAttribute('onclick','Community.sortByFirstLetter()')
+  sortByNewest.setAttribute('onclick','Community.sortByNewest()')
+  sortByOldest.setAttribute('onclick','Community.sortByOldest()')
   sortByFirstLetter.className = "dropdown-item"
   sortByNewest.className = "dropdown-item"
   sortByOldest.className = "dropdown-item"
@@ -71,6 +71,8 @@ function dropDownMenu(){
   sortByNewest.style = "cursor: pointer"
   sortByOldest.style = "cursor: pointer"
   menu.appendChild(sortByFirstLetter)
+  menu.appendChild(sortByNewest)
+  menu.appendChild(sortByOldest)
   span.appendChild(button)
   span.appendChild(menu)
   return span
