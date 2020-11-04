@@ -8,7 +8,7 @@ class Api::V1::CommunitiesController < ApplicationController
     def create 
         community = Community.new(name: params[:name])
         if community.save
-            render json: {name: community.name, id: community.id}
+            render json: CommunitySerializer.new(community,{include: [:posts]}).serializable_hash
           else
             render json: { errors: community.errors.full_messages }
           end

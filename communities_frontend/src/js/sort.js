@@ -1,7 +1,7 @@
 class Sort{
     
   static sortByFirstLetter(list,idName,title){
-    list.sort((a, b) => (a.name > b.name) ? 1 : -1)
+    !!list[0].name ? list.sort((a, b) => (a.name > b.name) ? 1 : -1) : list.sort((a, b) => (a.title > b.title) ? 1 : -1)
     document.querySelector(idName).innerHTML = ""
     displayOnDom(list,idName, title)
   }

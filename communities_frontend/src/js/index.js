@@ -32,5 +32,6 @@ homeButton.addEventListener("click", () => {
   postsDOMList = []
   communitiesList.removeAttribute("style");
   communitiesList.setAttribute("style", "padding-top: 10px;");
+  document.getElementById('sortMenu').remove()
   document.getElementById('headerDropDown').appendChild(dropDownMenu(communitiesDOMList,"#communitiesList", "Communities"))
 });
