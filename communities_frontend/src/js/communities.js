@@ -1,6 +1,7 @@
 let communitiesDOMList = [];
+
 class Community {
-  
+
   constructor(obj) {
     this.name = obj.name;
     this.id = obj.id;
@@ -28,26 +29,9 @@ class Community {
     return li;
   }
 
-  static sortByFirstLetter(){
-    communitiesDOMList.sort((a, b) => (a.name > b.name) ? 1 : -1)
-    communitiesList.innerHTML = ""
-    displayOnDom(communitiesDOMList,"#communitiesList", "Communities")
-  }
-  
-  static sortByOldest(){
-    communitiesDOMList.sort((a, b) => (a.created_at > b.created_at) ? 1 : -1)
-    communitiesList.innerHTML = ""
-    displayOnDom(communitiesDOMList,"#communitiesList", "Communities")
-  }
-  
-  static sortByNewest(){
-    communitiesDOMList.sort((a, b) => (a.created_at < b.created_at) ? 1 : -1)
-    communitiesList.innerHTML = ""
-    displayOnDom(communitiesDOMList,"#communitiesList", "Communities")
-  }
- 
 }
 
+// COMMUNITY POSTS
 function communityPosts(data) {
   let posts = data.slice(1);
   communitiesList.setAttribute('style','display:none')
@@ -56,13 +40,22 @@ function communityPosts(data) {
   displayOnDom(Post.createPosts(posts), '#postsList', `Posts for ${data[0].name}`)
 }
 
-// FUNCTON FOR POST CREATE COMMUNITIES
+//  FUNCTIONS FOR MODAL
+
+function openCommunityForm() {
+  document.body.classList.add("showCommunityForm");
+}
+function closeCommunityForm() {
+  document.body.classList.remove("showCommunityForm");
+}
+
+// FUNCTON FOR CREATE COMMUNITIES
 
 function makeCommunity() {
   event.preventDefault();
   let input = event.target.parentElement.parentElement.querySelector("#name")
     .value;
-  fetch(`${BASE_URL}/api/v1/communities`, {
+  fetch(`${BASE_URL}communities`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -81,3 +74,26 @@ function makeCommunity() {
     })
     .catch((error) => console.log(error));
 }
+
+// MODAL CODE
+
+let sample = `
+<div class="popup-overlay"></div>
+<div class="popup">
+  <div class="popup-close" onclick="closeCommunityForm()">&times;</div>
+  <div class="form">
+    <div class="avatar">
+      <img src="./src/img/COMMUNITY.png" alt="">
+    </div>
+    <div class="header">
+      Create New Community
+    </div>
+    <div class="element">
+      <label for="name">Community Name:</label>
+      <input type="text" id="name">
+    </div>
+    <div class="element">
+      <button id="createCommunity" onclick="makeCommunity()">Create!</button>
+    </div>
+  </div>
+</div>`

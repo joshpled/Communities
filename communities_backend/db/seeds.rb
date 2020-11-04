@@ -13,8 +13,9 @@ Post.destroy_all
 }
 
 Community.all.each do |x|
-  newArr = Array.new(10, Post.new(title: Faker::Lorem.word, content: Faker::Lorem.paragraph(sentence_count: 4), user_id: Faker::Number.within(range: 0..9)))
-  newArr.each do |y|
-    x.posts << y
-  end
+  10.times{
+    x.posts << (Post.new(title: Faker::Lorem.word, content: Faker::Lorem.paragraph(sentence_count: 4), user_id: Faker::Number.within(range: 0..9)))
+  }
 end
+
+
