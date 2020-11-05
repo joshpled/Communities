@@ -1,17 +1,21 @@
+require "pry"
+
 class Api::V1::PostsController < ApplicationController
-    def index
-        posts = Post.all
-        render json: PostSerializer.new(posts).serializable_hash
-    end
+  def index
+    posts = Post.all
+    render json: PostSerializer.new(posts).serializable_hash
+  end
 
-    def create
-        byebug
-        post = Post.new(title:,content:)
-        if post.save
-            render json: PostSerializer.new(post).serializable_hash
-          else
-            render json: { errors: post.errors.full_messages }
-          end
+  def create
+    post = Post.new(title: params[:title], content: params[:content], community_id: params[:community_id], user_id: params[:user_id])
+    
+    binding.pry
+    
+    community = Community.find_by_id(params[:community_id])
+    if post.save
+      render json: PostSerializer.new(post)
+    else
+      render json: { errors: post.errors.full_messages }
     end
-
+  end
 end

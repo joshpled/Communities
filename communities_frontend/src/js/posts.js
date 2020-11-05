@@ -38,7 +38,8 @@ function communityPosts(data) {
   communitiesList.setAttribute('style','display:none')
   postList.removeAttribute('style')
   postList.setAttribute('style','padding-top: 10px;')
-  displayOnDom(Post.createPosts(posts), '#postsList', `Posts for ${data[0].name}`, data[0].name,data[0].id)
+  postsDOMList = Post.createPosts(posts)
+  displayOnDom(postsDOMList, '#postsList', `Posts for ${data[0].name}`, data[0].name,data[0].id)
 }
 
 function makePost(id) {
@@ -60,7 +61,10 @@ function makePost(id) {
   })
     .then((resp) => resp.json())
     .then((json) => {
+      postsDOMList.push(new Post(json.data))
+      postList.innerHtml = ""
       debugger
+      displayOnDom(postsDOMList,'#postsList', `Posts for ${data[0].name}`, data[0].name,data[0].id)
     })
     .catch((error) => console.log(error));
 }
