@@ -10,8 +10,13 @@ class PostSerializer
 
   def serializable_hash
     data = super
-    
-    binding.pry
-    
+
+    if data[:data].is_a? Array
+      data[:data].map do |x|
+        { id: x[:id], title: x[:attributes][:title], content: x[:attributes][:content], created_at: x[:attributes][:created_at] }
+      end
+    else
+      data[:data]
+    end
   end
 end
