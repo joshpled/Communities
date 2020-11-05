@@ -35,3 +35,13 @@ homeButton.addEventListener("click", () => {
   document.getElementById('sortMenu').remove()
   document.getElementById('headerDropDown').appendChild(dropDownMenu(communitiesDOMList,"#communitiesList", "Communities"))
 });
+
+function makePostButton(){
+  let button = document.createElement('button')
+  button.className = "btn btn-secondary btn-sm"
+  button.innerText = "Create a New Post"
+  button.addEventListener('click', ()=>{
+    alert('hello')
+  })
+  return button
+}

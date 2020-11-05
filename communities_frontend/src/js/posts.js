@@ -31,3 +31,28 @@ class Post {
   }
   
 }
+
+function makePost() {
+  
+  event.preventDefault();
+  // let input = event.target.parentElement.parentElement.querySelector("#name")
+  //   .value;
+  // fetch(`${BASE_URL}communities`, {
+  //   method: "POST",
+  //   headers: {
+  //     "Content-Type": "application/json",
+  //     Accept: "application/json",
+  //   },
+  //   body: JSON.stringify({
+  //     name: input,
+  //   }),
+  // })
+  //   .then((resp) => resp.json())
+  //   .then((json) => {
+  //     communitiesDOMList.push(new Community(json[0]))
+  //     communitiesList.innerHTML = ""
+  //     displayOnDom(communitiesDOMList, "#communitiesList", "Communities")
+  //     closeCommunityForm()
+  //   })
+  //   .catch((error) => console.log(error));
+}
