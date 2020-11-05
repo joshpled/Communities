@@ -2,7 +2,6 @@ let postsDOMList = [];
 
 class Post {
   constructor(obj) {
-    debugger
     this.title = obj.title;
     this.content = obj.content;
     this.user_id = obj.user_id;
@@ -18,7 +17,6 @@ class Post {
     var p = document.createElement('p');
     let small = document.createElement('small')
     small.setAttribute('style','float: right;')
-    debugger
     small.innerText = this.created_at
     li.className = "list-group-item list-group-item-action";
     li.setAttribute('style','cursor: pointer')

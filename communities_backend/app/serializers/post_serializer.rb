@@ -9,13 +9,11 @@ class PostSerializer
 
   def serializable_hash
     data = super
-    # byebug
     if data[:data].is_a? Hash
       community = Array.new
       community << data[:data][:attributes]
       data[:included].each do |x|
-        byebug
-        community << { id: x[:id], title: x[:attributes][:title], content: x[:attributes][:content], user_id: x[:relationships][:user][:data][:id], created_at: x[]}
+        community << { id: x[:id], title: x[:attributes][:title], content: x[:attributes][:content], user_id: x[:relationships][:user][:data][:id], created_at: x[:attributes][:created_at]}
       end
       return community
     elsif data[:data].is_a? Array
