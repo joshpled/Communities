@@ -8,8 +8,9 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelector("#modal").innerHTML = sample;
 });
 
-function displayOnDom(list, idName, title) {
+function displayOnDom(list, idName, title,buttonTitle="",id="") {
   let div = document.createElement('div')
+  let buttonDiv = document.createElement('div')
   let listName = document.querySelector(idName);
   let header = document.createElement('h1')
   header.className = "display-4 text-white"
@@ -20,6 +21,11 @@ function displayOnDom(list, idName, title) {
   div.appendChild(header)
   div.appendChild(dropDownMenu(list,idName,title))
   listName.appendChild(div)
+  if (idName === '#postsList'){
+    buttonDiv.setAttribute('style','margin-bottom: 10px;')
+    buttonDiv.appendChild(makePostButton(buttonTitle,id))
+    listName.appendChild(buttonDiv)
+  } 
   for (let x of list) {
     let li = x.createLiElement();
     listName.appendChild(li);
@@ -36,12 +42,3 @@ homeButton.addEventListener("click", () => {
   document.getElementById('headerDropDown').appendChild(dropDownMenu(communitiesDOMList,"#communitiesList", "Communities"))
 });
 
-function makePostButton(){
-  let button = document.createElement('button')
-  button.className = "btn btn-secondary btn-sm"
-  button.innerText = "Create a New Post"
-  button.addEventListener('click', ()=>{
-    alert('hello')
-  })
-  return button
-}

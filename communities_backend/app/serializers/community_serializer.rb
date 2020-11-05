@@ -15,7 +15,7 @@ class CommunitySerializer
       community = Array.new
       community << data[:data][:attributes]
       data[:included].each do |x|
-        community << { id: x[:id], title: x[:attributes][:title], content: x[:attributes][:content], user_id: x[:relationships][:user][:data][:id], created_at: x[:attributes][:created_at] }
+        community << { community_id: x[:relationships][:community][:data][:id], id: x[:id], title: x[:attributes][:title], content: x[:attributes][:content], user_id: x[:relationships][:user][:data][:id], created_at: x[:attributes][:created_at] }
       end
       return community
     elsif data[:data].is_a? Array

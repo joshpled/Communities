@@ -31,15 +31,6 @@ class Community {
 
 }
 
-// COMMUNITY POSTS
-function communityPosts(data) {
-  let posts = data.slice(1);
-  communitiesList.setAttribute('style','display:none')
-  postList.removeAttribute('style')
-  postList.setAttribute('style','padding-top: 10px;')
-  displayOnDom(Post.createPosts(posts), '#postsList', `Posts for ${data[0].name}`)
-}
-
 //  FUNCTIONS FOR MODAL
 
 function openCommunityForm() {
