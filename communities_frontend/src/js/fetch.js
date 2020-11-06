@@ -5,8 +5,9 @@ async function getAllCommunities() {
   displayOnDom(communitiesDOMList, "#communitiesList", "Communities");
 }
 
-function goToCommunity(id) {
-  fetch(`${BASE_URL}communities/${id}/posts`)
-  .then((resp) => resp.json())
-  .then((data) => Post.createPosts(data));
+async function goToCommunity(id) {
+  const resp = await fetch(`${BASE_URL}communities/${id}/posts`)
+  const data = await resp.json()
+  postsDOMList = Post.createPosts(data)
+  communityPosts(postsDOMList)
 }

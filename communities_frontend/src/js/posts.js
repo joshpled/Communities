@@ -4,13 +4,12 @@ class Post {
   constructor(obj) {
     this.title = obj.title;
     this.content = obj.content;
-    this.user_id = obj.user_id;
     this.created_at = obj.created_at;
+    this.community_name = obj.community_name;
     this.community_id = obj.community_id
   }
 
   static createPosts(arr) {
-    debugger
     return arr.map((x) => new Post(x));
   }
 
@@ -35,19 +34,17 @@ class Post {
 }
 
 function communityPosts(data) {
-  let posts = data.slice(1);
   communitiesList.setAttribute('style','display:none')
   postList.removeAttribute('style')
   postList.setAttribute('style','padding-top: 10px;')
-  postsDOMList = Post.createPosts(posts)
-  displayOnDom(postsDOMList, '#postsList', `Posts for ${data[0].name}`, data[0].name,data[0].id)
+  displayOnDom(postsDOMList, '#postsList', `Posts for ${data[0].community_name}`, data[0].community_name, data[0].community_id)
 }
 
 function makePost(id) {
   event.preventDefault();
   let title = event.target.parentElement.querySelector('#title').value
   let content = event.target.parentElement.querySelector('#content').value
-  fetch(`${BASE_URL}posts`, {
+  fetch(`${BASE_URL}communities/${id}/posts`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -62,10 +59,10 @@ function makePost(id) {
   })
     .then((resp) => resp.json())
     .then((json) => {
-      postsDOMList.push(new Post(json.data))
-      postList.innerHtml = ""
-      debugger
-      displayOnDom(postsDOMList,'#postsList', `Posts for ${data[0].name}`, data[0].name,data[0].id)
+      post = new Post(json)
+      postsDOMList.push(post)
+      postList.innerHTML = ""
+      displayOnDom(postsDOMList, '#postsList', `Posts for ${json.community_name}`, json.community_name, json.community_id)
     })
     .catch((error) => console.log(error));
 }
