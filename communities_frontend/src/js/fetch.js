@@ -5,9 +5,17 @@ async function getAllCommunities() {
   displayOnDom(communitiesDOMList, "#communitiesList", "Communities");
 }
 
-async function goToCommunity(id) {
+async function goToCommunity(id,name) {
   const resp = await fetch(`${BASE_URL}communities/${id}/posts`)
-  const data = await resp.json()
-  postsDOMList = Post.createPosts(data)
-  communityPosts(postsDOMList)
+  if (resp.ok === false){
+    communitiesList.setAttribute('style','display:none')
+    postList.removeAttribute('style')
+    postList.setAttribute('style','padding-top: 10px;')
+    displayOnDom(postsDOMList, '#postsList', `Posts for ${name}`, name, id)
+  } else {
+    const data = await resp.json()
+    postsDOMList = Post.createPosts(data)
+    
+  }
+  
 }

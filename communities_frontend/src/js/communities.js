@@ -14,6 +14,7 @@ class Community {
 
   createLiElement() {
     let id = this.id;
+    let name = this.name
     let li = document.createElement("li");
     let small = document.createElement('small')
     small.setAttribute('style','float: right;')
@@ -23,7 +24,7 @@ class Community {
     li.innerHTML = this.name.toUpperCase();
     li.setAttribute("data-communitylist", "indexList");
     li.onclick = function () {
-      goToCommunity(id);
+      goToCommunity(id,name);
     };
     li.appendChild(small)
     return li;
