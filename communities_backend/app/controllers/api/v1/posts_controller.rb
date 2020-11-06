@@ -1,5 +1,3 @@
-require "pry"
-
 class Api::V1::PostsController < ApplicationController
   def index
     posts = Post.where("community_id = ?", params[:community_id])
