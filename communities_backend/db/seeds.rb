@@ -10,12 +10,12 @@ Comment.destroy_all
 }
 
 10.times {
-  Community.create(name: Faker::Game.title)
+  Community.create(name: Faker::Movie.title)
 }
 
 Community.all.each do |x|
   10.times{
-    x.posts << (Post.new(title: Faker::Lorem.word, content: Faker::Lorem.paragraph(sentence_count: 4), user_id: Faker::Number.within(range: 0..9)))
+    x.posts << (Post.new(title: Faker::Movie.quote, content: Faker::Lorem.paragraph(sentence_count: 4), user_id: Faker::Number.within(range: 0..9)))
   }
 end
 
