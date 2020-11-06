@@ -25,6 +25,6 @@ async function getCommentsFromPost(commId,postId){
     console.log('No Comments')
   } else {
     const data = await resp.json();
-console.log(data)
+    commentsDOMList = postComment.createComments(data)
   }
 }
