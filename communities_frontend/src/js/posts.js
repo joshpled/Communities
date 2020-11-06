@@ -10,6 +10,7 @@ class Post {
   }
 
   static createPosts(arr) {
+    debugger
     return arr.map((x) => new Post(x));
   }
 

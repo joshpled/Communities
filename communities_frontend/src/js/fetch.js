@@ -6,7 +6,7 @@ async function getAllCommunities() {
 }
 
 function goToCommunity(id) {
-  fetch(`${BASE_URL}communities/${id}`)
+  fetch(`${BASE_URL}communities/${id}/posts`)
   .then((resp) => resp.json())
-  .then((data) => communityPosts(data));
+  .then((data) => Post.createPosts(data));
 }

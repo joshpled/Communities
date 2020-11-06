@@ -2,11 +2,11 @@ require "pry"
 
 class Api::V1::PostsController < ApplicationController
   def index
-    posts = Post.all
+    posts = Post.where("community_id = ?", params[:community_id])
     render json: PostSerializer.new(posts, {include: [:comments]}).serializable_hash
   end
 
-  def show 
+  def show
     post = Post.find_by_id(params[:id])
     render json: PostSerializer.new(post, {include: [:comments]}).serializable_hash
   end

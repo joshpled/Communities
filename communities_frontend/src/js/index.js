@@ -1,4 +1,5 @@
 const BASE_URL = "http://localhost:3000/api/v1/";
+
 const homeButton = document.querySelector("#homeButton");
 const postList = document.querySelector("#postsList");
 const communitiesList = document.querySelector("#communitiesList");
