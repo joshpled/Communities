@@ -16,7 +16,7 @@ class CommunitySerializer
         { id: x[:id], name: x[:attributes][:name], created_at: x[:attributes][:created_at] }
       end
     else
-      data[:data]
+      { id: data[:data][:id], name: data[:data][:attributes][:name], created_at: data[:data][:attributes][:created_at] }
     end
 
   end

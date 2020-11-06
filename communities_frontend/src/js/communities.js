@@ -5,7 +5,7 @@ class Community {
   constructor(obj) {
     this.name = obj.name;
     this.id = obj.id;
-    this.created_at = obj.created_at
+    this.created_at = obj.created_at;
   }
 
   static createCommunities(arr) {
@@ -58,7 +58,7 @@ function makeCommunity() {
   })
     .then((resp) => resp.json())
     .then((json) => {
-      communitiesDOMList.push(new Community(json[0]))
+      communitiesDOMList.push(new Community(json))
       communitiesList.innerHTML = ""
       displayOnDom(communitiesDOMList, "#communitiesList", "Communities")
       closeCommunityForm()
