@@ -36,6 +36,13 @@ class Community {
 
 function openCommunityForm() {
   document.body.classList.add("showCommunityForm");
+  let createCommmInput = document.getElementById('communityName');
+  createCommmInput.addEventListener('keyup', ()=>{
+    if (event.keyCode === 13){
+      event.preventDefault();
+      document.getElementById('createCommunity').click();
+    }
+  })
 }
 function closeCommunityForm() {
   document.body.classList.remove("showCommunityForm");
@@ -45,7 +52,7 @@ function closeCommunityForm() {
 
 function makeCommunity() {
   event.preventDefault();
-  let input = event.target.parentElement.parentElement.querySelector("#name")
+  let input = event.target.parentElement.parentElement.querySelector("#communityName")
     .value;
   fetch(`${BASE_URL}communities`, {
     method: "POST",
@@ -82,7 +89,7 @@ let sample = `
     </div>
     <div class="element">
       <label for="name">Community Name:</label>
-      <input type="text" id="name">
+      <input type="text" id="communityName">
     </div>
     <div class="element">
       <button id="createCommunity" onclick="makeCommunity()">Create!</button>

@@ -2,6 +2,7 @@ let postsDOMList = [];
 
 class Post {
   constructor(obj) {
+    this.id = obj.id;
     this.title = obj.title;
     this.content = obj.content;
     this.created_at = obj.created_at;
@@ -14,6 +15,8 @@ class Post {
   }
 
   createLiElement() {
+    let community_id = this.community_id
+    let id = this.id
     var li = document.createElement("li");
     var p = document.createElement('p');
     let small = document.createElement('small')
@@ -28,6 +31,9 @@ class Post {
     li.appendChild(p)
     li.setAttribute("data-postslist", "postlist");
     li.appendChild(small)
+    li.onclick = function () {
+      getCommentsFromPost(community_id,id);
+    };
     return li;
   }
   

@@ -18,3 +18,13 @@ async function goToCommunity(id, name) {
     communityPosts(postsDOMList);
   }
 }
+
+async function getCommentsFromPost(commId,postId){
+  const resp = await fetch(`${BASE_URL}communities/${commId}/posts/${postId}/comments`)
+  if (resp.ok === false){
+    console.log('No Comments')
+  } else {
+    const data = await resp.json();
+console.log(data)
+  }
+}
