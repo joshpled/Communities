@@ -14,6 +14,7 @@ function displayOnDom(list, idName, title,buttonTitle="",id="") {
   let buttonDiv = document.createElement('div')
   let listName = document.querySelector(idName);
   let header = document.createElement('h1')
+  buttonDiv.setAttribute('id','buttonDiv')
   header.className = "display-4 text-white"
   header.innerText = title
   header.setAttribute('style','float:left;')
@@ -46,6 +47,6 @@ homeButton.addEventListener("click", () => {
   communitiesList.removeAttribute("style");
   communitiesList.setAttribute("style", "padding-top: 10px;");
   document.getElementById('sortMenu').remove()
-  document.getElementById('headerDropDown').appendChild(dropDownMenu(communitiesDOMList,"#communitiesList", "Communities"))
+  document.getElementById('buttonDiv').appendChild(dropDownMenu(communitiesDOMList,"#communitiesList", "Communities"))
 });
 
