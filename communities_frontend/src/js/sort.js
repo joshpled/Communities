@@ -63,7 +63,7 @@ function dropDownMenu(list,idName,title){
   button.setAttribute('data-toggle','dropdown')
   button.setAttribute('aria-haspopup','true')
   button.setAttribute('aria-expanded','false')
-  button.setAttribute('style','height: 34px;margin-left: 10px;')
+  button.setAttribute('style','height: 34px;margin: 10px 0 0 10px;')
   button.innerText = "Sort"
   let menu = document.createElement('div')
   menu.className = "dropdown-menu"

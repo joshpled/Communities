@@ -1,6 +1,11 @@
 body{
     background-color: #1287A5;
     font-family: 'Nunito', sans-serif;
+    opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: .5s;
 }
 
 #mainDiv {
@@ -14,6 +19,23 @@ body{
 
 [data-communitylist="indexList"]{
   cursor: pointer;
+}
+
+[data-transition="fadeIn"] {
+	opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: .5s;
+}
+
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }
 
 /* MODAL CSS FROM  https://codingflag.blogspot.com/2020/10/how-to-create-animated-popup-modal-login-form-using-html-css-and-javascript.html */

@@ -77,6 +77,7 @@ function makePostButton(community,id){
   let button = document.createElement('button')
   button.className = "btn btn-secondary btn-sm"
   button.setAttribute('id','postButton')
+  button.setAttribute('style','margin-top: 10px;')
   button.innerText = "Create a New Post"
   button.addEventListener('click', ()=>{
     button.after(makePostForm(community,id))
