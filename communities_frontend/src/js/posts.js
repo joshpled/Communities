@@ -89,6 +89,7 @@ function makePostButton(community,id){
 function makePostForm(community,id){
   let formDiv = document.createElement('div')
   formDiv.setAttribute('style','border-radius: 5px; background-color: #f2f2f2; padding: 10px; margin: 10px 50px 0 50px;')
+  formDiv.setAttribute("data-transition","fadeIn")
   let formTitle = document.createElement('h5')
   formTitle.innerText = `Create New Post for ${community}`
   let form = document.createElement('form')
