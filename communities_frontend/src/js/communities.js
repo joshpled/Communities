@@ -20,7 +20,6 @@ class Community {
     small.setAttribute('style','float: right;')
     small.innerText = this.created_at
     li.className = "list-group-item list-group-item-action";
-    li.setAttribute('style','cursor: pointer')
     li.innerHTML = this.name.toUpperCase();
     li.setAttribute("data-communitylist", "indexList");
     li.onclick = function () {

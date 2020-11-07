@@ -20,13 +20,19 @@ function displayOnDom(list, idName, title,buttonTitle="",id="") {
   div.className = "container"
   div.setAttribute('id','headerDropDown')
   div.appendChild(header)
-  div.appendChild(dropDownMenu(list,idName,title))
   listName.appendChild(div)
   if (idName === '#postsList'){
     buttonDiv.setAttribute('style','margin-bottom: 10px;')
     buttonDiv.appendChild(makePostButton(buttonTitle,id))
+    buttonDiv.appendChild(searchInput())
+    buttonDiv.appendChild(dropDownMenu(list,idName,title))
     listName.appendChild(buttonDiv)
-  } 
+  } else{
+    buttonDiv.setAttribute('style','margin-bottom: 10px;')
+    buttonDiv.appendChild(searchInput())
+    buttonDiv.appendChild(dropDownMenu(list,idName,title))
+    listName.appendChild(buttonDiv)
+  }
   for (let x of list) {
     let li = x.createLiElement();
     listName.appendChild(li);

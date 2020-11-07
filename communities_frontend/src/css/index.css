@@ -12,6 +12,10 @@ body{
   display: inline-block;
 }
 
+[data-communitylist="indexList"]{
+  cursor: pointer;
+}
+
 /* MODAL CSS FROM  https://codingflag.blogspot.com/2020/10/how-to-create-animated-popup-modal-login-form-using-html-css-and-javascript.html */
 
 .center {

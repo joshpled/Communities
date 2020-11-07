@@ -20,6 +20,38 @@ class Sort{
 
 }
 
+function searchInput(){
+  let input = document.createElement('input')
+  input.setAttribute('type','text')
+  input.setAttribute('onkeyup','searchDOMlist()')
+  input.setAttribute('placeholder','Search')
+  input.setAttribute('aria-label','Search')
+  input.setAttribute('id','searchInput')
+  input.setAttribute('style','float:right;margin: 10px 10px 0 0 ;')
+  return input
+}
+
+function searchDOMlist() {
+  var input, filter, ul, li, i, txtValue;
+  input = document.getElementById("searchInput");
+  filter = input.value.toUpperCase();
+  if (!!document.getElementById("communitiesList").style.display){
+    ul = document.getElementById("postsList");
+  } else {
+    ul = document.getElementById("communitiesList");
+  }
+  
+  li = ul.getElementsByTagName("li");
+  for (i = 0; i < li.length; i++) {
+      txtValue = li[i].innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          li[i].style.display = "";
+      } else {
+          li[i].style.display = "none";
+      }
+  }
+}
+
 function dropDownMenu(list,idName,title){
   let span = document.createElement('span')
   span.className = "align-items-end"
@@ -31,8 +63,8 @@ function dropDownMenu(list,idName,title){
   button.setAttribute('data-toggle','dropdown')
   button.setAttribute('aria-haspopup','true')
   button.setAttribute('aria-expanded','false')
+  button.setAttribute('style','height: 34px;margin-left: 10px;')
   button.innerText = "Sort"
-  button.style = "float: right;"
   let menu = document.createElement('div')
   menu.className = "dropdown-menu"
   menu.setAttribute('aria-labelledby','dropdownMenu1')
