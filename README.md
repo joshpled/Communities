@@ -1,5 +1,5 @@
-# Project Name
-> Here goes your awesome project description!
+# Communities App
+> Find local friends and start sharing your passions! Communities is a platform for social interaction that removes the ads and the personal sharing, implements an easy to use interface to create a community and share interests. More features to come! 
 
 ## Table of contents
 * [General info](#general-info)
@@ -12,10 +12,13 @@
 * [Contact](#contact)
 
 ## General info
-Add more general information about project. What the purpose of the project is? Motivation?
+This is my Flatiron Bootcamp MOD 4 project. Born out of a need to connect with locals who have similar interests without going to a big meet up that intimidates me. 
 
 ## Screenshots
-![Example screenshot](./img/screenshot.png)
+![](https://i.imgur.com/8ivt2sU.png)
+![](https://i.imgur.com/0WYszvZ.png)
+![Example screenshot](https://i.imgur.com/tpOt3Y6.png)
+
 
 ## Technologies
 * Tech 1 - version 1.0
