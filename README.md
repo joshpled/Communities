@@ -17,16 +17,20 @@ This is my Flatiron Bootcamp MOD 4 project. Born out of a need to connect with l
 ## Screenshots
 ![](https://i.imgur.com/8ivt2sU.png)
 ![](https://i.imgur.com/0WYszvZ.png)
-![Example screenshot](https://i.imgur.com/tpOt3Y6.png)
+![](https://i.imgur.com/tpOt3Y6.png)
 
 
 ## Technologies
-* Tech 1 - version 1.0
-* Tech 2 - version 2.0
-* Tech 3 - version 3.0
+* Ruby on Rails - Ruby version 2.6.1 and Rails version 6.0.3 as API
+* Javacscript - Node.js version 14.13.0
+* PostgreSQL - version 12.4
+* Bootstrap - version 4.5.3
+* Ruby Gems: fast_jsonapi, faker, awesomeprint, puma, byebug, rack-cors, and bootsnap
 
 ## Setup
-Describe how to install / setup your local environement / add link to demo version.
+`rails db:create`
+`rails db:migrate`
+`rails s`
 
 ## Code Examples
 Show examples of usage:
