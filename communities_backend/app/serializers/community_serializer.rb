@@ -1,5 +1,3 @@
-require "pry"
-
 class CommunitySerializer
   include FastJsonapi::ObjectSerializer
   attributes :name, :id

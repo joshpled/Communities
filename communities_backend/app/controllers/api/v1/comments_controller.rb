@@ -6,11 +6,11 @@ class Api::V1::CommentsController < ApplicationController
   end
 
   def show
-    binding.pry
+    byebug
   end
 
   def create
-    binding.pry
+    byebug
   end
 
 end
