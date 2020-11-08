@@ -11,7 +11,7 @@ class Api::V1::PostsController < ApplicationController
 
 
   def create
-    post = Post.new(title: params[:title], content: params[:content], community_id: params[:community_id], user_id: params[:user_id])
+    post = Post.new(title: params[:title], content: params[:content], community_id: params[:community_id])
     community = Community.find_by_id(params[:community_id])
     if post.save
       render json: PostSerializer.new(post).serializable_hash

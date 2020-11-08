@@ -6,7 +6,6 @@ class postComment {
     this.id = obj.id;
     this.created_at = obj.created_at;
     this.post_id = obj.post_id;
-    this.user_id = obj.user_id;
   }
 
   static createComments(arr) {

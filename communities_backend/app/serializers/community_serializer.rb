@@ -6,7 +6,6 @@ class CommunitySerializer
   attribute :created_at do |x|
     x[:created_at].strftime('%D %R')
   end
-  has_many :user_communities
   has_many :posts, serializer: PostSerializer
 
   def serializable_hash

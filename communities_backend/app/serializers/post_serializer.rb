@@ -4,7 +4,6 @@ class PostSerializer
   attribute :created_at do |x|
     x[:created_at].strftime("%D %R")
   end
-  belongs_to :user
   belongs_to :community
   has_many :comments, serializer: CommentSerializer
 

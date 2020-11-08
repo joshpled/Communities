@@ -1,10 +1,7 @@
 Rails.application.routes.draw do
-  root to: "application#cookie"
-  resources :session
 
   namespace :api do
     namespace :v1 do
-      resources :users
       resources :communities do
         resources :posts do
           resources :comments

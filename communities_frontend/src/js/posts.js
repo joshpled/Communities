@@ -60,7 +60,6 @@ function makePost(id) {
       title: title,
       content: content,
       community_id: id,
-      user_id: 1
     }),
   })
     .then((resp) => resp.json())
