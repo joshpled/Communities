@@ -28,29 +28,43 @@ This is my Flatiron Bootcamp MOD 4 project. Born out of a need to connect with l
 * Ruby Gems: fast_jsonapi, faker, awesomeprint, puma, byebug, rack-cors, and bootsnap
 
 ## Setup
-`rails db:create`
-`rails db:migrate`
-`rails s`
+Fork and Clone then run:
+```
+rails db:create
+rails db:migrate
+// optional: rails db:seed
+rails s
+```
 
 ## Code Examples
-Show examples of usage:
-`put-your-code-here`
+```
+const BASE_URL = "http://localhost:3000/api/v1/";
+```
 
+Inside index.js is the `BASE_URL` variable if you need to change it
+
+```
+document.addEventListener("DOMContentLoaded", () => {
+```
+```
+  getAllCommunities(); //auto populates the list. If you didn't seed it, there should be nothing. Check console. 
+```
+```
+  document.querySelector("#modal").innerHTML = sample; // required for modal of create community to work. See communities.js
+});
+```
 ## Features
 List of features ready and TODOs for future development
-* Awesome feature 1
-* Awesome feature 2
-* Awesome feature 3
+* User accounts and associations
+* Create Events
+* Comments
 
 To-do list:
-* Wow improvement to be done 1
-* Wow improvement to be done 2
+* Create Comments
+* Create Events
 
 ## Status
-Project is: _in progress_, _finished_, _no longer continue_ and why?
-
-## Inspiration
-Add here credits. Project inspired by..., based on...
+Project is: _in progress_, because it started as a school project and it's still in development. 
 
 ## Contact
-Created by [@flynerdpl](https://www.flynerd.pl/) - feel free to contact me!
+Created by Joshua Perez Leduc
