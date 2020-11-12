@@ -19,4 +19,12 @@ class Api::V1::PostsController < ApplicationController
       render json: { errors: post.errors.full_messages }
     end
   end
+
+  def destroy
+    post = Post.find_by_id(params[:id])
+    post.comments.destroy_all
+    post.destroy
+  end
+
+
 end

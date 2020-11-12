@@ -5,7 +5,7 @@ const postList = document.querySelector("#postsList");
 const communitiesList = document.querySelector("#communitiesList");
 
 document.addEventListener("DOMContentLoaded", () => {
-  getAllCommunities();
+  getAllCommunities()
   document.querySelector("#modal").innerHTML = sample;
 });
 
@@ -29,7 +29,9 @@ function displayOnDom(list, idName, title,buttonTitle="",id="") {
     buttonDiv.appendChild(dropDownMenu(list,idName,title))
     let deleteButton = document.createElement('button')
     deleteButton.addEventListener('click', ()=>{
+      if (window.confirm(`Would you like to delete this community?`)){
       deleteCommunity()
+      }
     })
     deleteButton.setAttribute('class','btn btn-secondary btn-sm')
     deleteButton.setAttribute('style','margin: 10px 0 0 10px;')

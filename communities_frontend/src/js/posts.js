@@ -32,10 +32,16 @@ class Post {
     deleteButton.setAttribute('class','btn btn-outline-primary')
     deleteButton.innerHTML = deleteButtonHTML
     deleteButton.setAttribute('style','float:right;')
+    deleteButton.addEventListener('click', ()=>{
+      if (window.confirm(`Would you like to delete Post: "${this.title}"`)){
+        deletePost(this.id, this.community_id)
+      }
+    })
     li.appendChild(deleteButton)
     li.appendChild(title)
     li.appendChild(p)
     li.setAttribute("data-postslist", "postlist");
+    li.setAttribute('postid',`${this.id}`)
     li.appendChild(small)
     li.onclick = function () {
       getCommentsFromPost(community_id,id);
@@ -151,6 +157,21 @@ function makePostForm(community,id){
   formDiv.appendChild(submitButton)
   formDiv.appendChild(cancelButton)
   return formDiv
+}
+
+function deletePost(id,community_id) {
+  event.preventDefault();
+  fetch(`${BASE_URL}communities/${community_id}/posts/${id}`, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
+  })
+    .then(() => {
+      document.querySelector(`[postid="${id}"]`).setAttribute('style','display:none')
+    })
+    .catch((error) => console.log(error));
 }
 
 let deleteButtonHTML = `
