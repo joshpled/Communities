@@ -22,6 +22,7 @@ class Community {
     li.className = "list-group-item list-group-item-action";
     li.innerHTML = this.name.toUpperCase();
     li.setAttribute("data-communitylist", "indexList");
+    li.setAttribute("communityId", this.id)
     li.onclick = function () {
       goToCommunity(id,name);
     };
@@ -73,7 +74,25 @@ function makeCommunity() {
     .catch((error) => console.log(error));
 }
 
-// MODAL CODE
+function deleteCommunity() {
+  let id = event.target.id
+  event.preventDefault();
+  fetch(`${BASE_URL}communities/${id}`, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
+  })
+    .then(() => {
+      document.querySelector(`[communityid="${id}"]`).setAttribute('style','display:none')
+      goHome()
+    })
+    .catch((error) => console.log(error));
+}
+
+
+// MODAL CODE 
 
 let sample = `
 <div class="popup-overlay"></div>

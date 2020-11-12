@@ -18,4 +18,13 @@ class Api::V1::CommunitiesController < ApplicationController
         community = Community.find_by_id(params[:id])
         render json: CommunitySerializer.new(community,{include: [:posts]}).serializable_hash
     end
+
+    def destroy
+        community = Community.find_by_id(params[:id])
+        community.posts.each do |x|
+            x.comments.destroy_all
+        end
+        community.posts.destroy_all
+        community.destroy
+    end
 end

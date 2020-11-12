@@ -27,6 +27,15 @@ function displayOnDom(list, idName, title,buttonTitle="",id="") {
     buttonDiv.appendChild(makePostButton(buttonTitle,id))
     buttonDiv.appendChild(searchInput())
     buttonDiv.appendChild(dropDownMenu(list,idName,title))
+    let deleteButton = document.createElement('button')
+    deleteButton.addEventListener('click', ()=>{
+      deleteCommunity()
+    })
+    deleteButton.setAttribute('class','btn btn-secondary btn-sm')
+    deleteButton.setAttribute('style','margin: 10px 0 0 10px;')
+    deleteButton.setAttribute('id',id)
+    deleteButton.innerText = "Delete Community"
+    buttonDiv.appendChild(deleteButton)
     listName.appendChild(buttonDiv)
   } else{
     buttonDiv.setAttribute('style','margin-bottom: 10px;')
@@ -41,6 +50,10 @@ function displayOnDom(list, idName, title,buttonTitle="",id="") {
 }
 
 homeButton.addEventListener("click", () => {
+  goHome()
+});
+
+let goHome = function (){
   postList.setAttribute("style", "display:none;");
   postList.innerHTML = "";
   postsDOMList = []
@@ -48,5 +61,4 @@ homeButton.addEventListener("click", () => {
   communitiesList.setAttribute("style", "padding-top: 10px;");
   document.getElementById('sortMenu').remove()
   document.getElementById('buttonDiv').appendChild(dropDownMenu(communitiesDOMList,"#communitiesList", "Communities"))
-});
-
+}
