@@ -94,7 +94,7 @@ function deleteCommunity() {
 
 // MODAL CODE 
 
-let sample = `
+let createCommunityModal = `
 <div class="popup-overlay"></div>
 <div class="popup">
   <div class="popup-close" onclick="closeCommunityForm()">&times;</div>

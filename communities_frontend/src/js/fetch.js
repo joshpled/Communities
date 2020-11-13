@@ -1,8 +1,13 @@
-async function getAllCommunities() {
-  const resp = await fetch(`${BASE_URL}communities`);
-  const data = await resp.json();
-  communitiesDOMList = Community.createCommunities(data);
-  displayOnDom(communitiesDOMList, "#communitiesList", "Communities");
+function getAllCommunities() {
+  fetch(`${BASE_URL}communities`)
+  .then((resp) => resp.json())
+  .then((data) => communitiesDOMList = Community.createCommunities(data))
+  .then(()=>{
+    displayOnDom(communitiesDOMList, "#communitiesList", "Communities");
+    document.getElementById('loader').style.display = 'none'
+    document.getElementById('mainDiv').style.display = ''
+    document.getElementById('navBar').style.display = ''
+  });
 }
 
 async function goToCommunity(id, name) {

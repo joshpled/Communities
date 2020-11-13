@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
   getAllCommunities(); //auto populates the list. If you didn't seed it, there should be nothing. Check console. 
 ```
 ```
-  document.querySelector("#modal").innerHTML = sample; // required for modal of create community to work. See communities.js
+  document.querySelector("#modal").innerHTML = createCommunityModal; // required for modal of create community to work. See communities.js
 });
 ```
 ## Features

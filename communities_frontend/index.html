@@ -24,9 +24,14 @@
 
     <title>Communities</title>
   </head>
+
   <body>
+    <div class="d-flex justify-content-center">
+      <div class="spinner-border text-danger m-5" style="width: 6rem; height: 6rem;" role="status" id="loader">
+      </div>
+    </div>
     <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark"  id="navBar" style="display: none;">
       <a class="navbar-brand">Communities</a>
       <button
         class="navbar-toggler"
@@ -59,7 +64,7 @@
     <!-- end NAVBAR -->
 
     <!-- Containers for Lists  -->
-    <div class="container" id="mainDiv" style="margin: auto">
+    <div class="container-fluid container-lg" id="mainDiv" style="margin: auto; display: none">
       <ul class="list-group" id="postsList" style="display: none" data-transition="fadeIn"></ul>
       <ul
         class="list-group"
