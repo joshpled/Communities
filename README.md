@@ -62,11 +62,13 @@ document.addEventListener("DOMContentLoaded", () => {
 ## Future Developments
 * Mobile Application (Progressive Web App | React Native)
 * Firebase implementation
+* Location Based (Implement GPS local group search)
 
 ## Status
 Project is: _in progress_, because it started as a school project and it's still in development.
 
 ## Inspiration
+Meetup and Facebook Groups are wonderful tools for meeting people. However, since all of our phones can now show us the closest restaurants and stores, why not the closests gather of minds? I want to meet people who knit and want to have a knit party. I want to meet people in real life that share my interests. If "eyes are the window to your soul" then our phones are the window to our world.
 
 ## License
 Copyright (c) 2020 Joshua Perez Leduc
