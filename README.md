@@ -10,6 +10,7 @@
 * [Future Developments](#future-developments)
 * [Status](#status)
 * [Inspiration](#inspiration)
+* [License](#license)
 * [Contact](#contact)
 
 ## General Info
