@@ -16,11 +16,9 @@
 Born out of a need to connect with locals who have similar interests without going to a big meet up that intimidates me. 
 
 ## Screenshots
-<img src="https://i.imgur.com/8ivt2sU.png" alt="alt text" width="250px">
-![](https://i.imgur.com/8ivt2sU.png)
-![](https://i.imgur.com/0WYszvZ.png)
-![](https://i.imgur.com/tpOt3Y6.png)
-
+<div align="center"><img src="https://i.imgur.com/8ivt2sU.png" width="400px"></div>
+<img src="https://i.imgur.com/0WYszvZ.png" width="400px">
+<img src="https://i.imgur.com/tpOt3Y6.png" width="400px">
 
 ## Technologies
 * Ruby on Rails - Ruby version 2.6.1 and Rails version 6.0.3 as API
