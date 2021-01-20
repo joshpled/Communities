@@ -16,9 +16,10 @@
 Born out of a need to connect with locals who have similar interests without going to a big meet up that intimidates me. 
 
 ## Screenshots
-![](https://i.imgur.com/8ivt2sU.png =250x)
-![](https://i.imgur.com/0WYszvZ.png =250x)
-![](https://i.imgur.com/tpOt3Y6.png =250x)
+<img src="https://i.imgur.com/8ivt2sU.png" alt="alt text" width="250px">
+![](https://i.imgur.com/8ivt2sU.png)
+![](https://i.imgur.com/0WYszvZ.png)
+![](https://i.imgur.com/tpOt3Y6.png)
 
 
 ## Technologies
