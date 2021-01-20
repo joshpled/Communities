@@ -7,17 +7,18 @@
 * [Technologies](#technologies)
 * [Setup](#setup)
 * [Features](#features)
+* [Future Developments](#future-developments)
 * [Status](#status)
 * [Inspiration](#inspiration)
 * [Contact](#contact)
 
-## General info
-This is my Flatiron Bootcamp MOD 4 project. Born out of a need to connect with locals who have similar interests without going to a big meet up that intimidates me. 
+## General Info
+Born out of a need to connect with locals who have similar interests without going to a big meet up that intimidates me. 
 
 ## Screenshots
-![](https://i.imgur.com/8ivt2sU.png)
-![](https://i.imgur.com/0WYszvZ.png)
-![](https://i.imgur.com/tpOt3Y6.png)
+![](https://i.imgur.com/8ivt2sU.png =250x)
+![](https://i.imgur.com/0WYszvZ.png =250x)
+![](https://i.imgur.com/tpOt3Y6.png =250x)
 
 
 ## Technologies
@@ -54,17 +55,18 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 ```
 ## Features
-List of features ready and TODOs for future development
 * User accounts and associations
 * Create Events
 * Comments
 
-To-do list:
-* Create Comments
-* Create Events
+## Future Developments
+* Mobile Application (Progressive Web App | React Native)
+* Firebase implementation
 
 ## Status
-Project is: _in progress_, because it started as a school project and it's still in development. 
+Project is: _in progress_, because it started as a school project and it's still in development.
+
+## Inspiration
 
 ## License
 Copyright (c) 2020 Joshua Perez Leduc
